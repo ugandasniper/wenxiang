@@ -25,8 +25,3 @@ data(test_mapping)
 list_mapping <- fill_mapping(test_mapping)
 print(list_mapping)
 }
-\seealso{
-\code{\link[data.table]{transpose}}
-\code{\link[tidyr]{fill}}
-\code{\link[tidyselect]{everything}}
-}

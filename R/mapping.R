@@ -6,8 +6,10 @@
 #' @details DETAILS
 #' @examples
 #' data(test_mapping)
-#' list_mapping <- get_dimension_mapping_from_df(test_mapping,
-#'                                               dim_cols = c('scale', 'dimension-1', 'dimension-2'))
+#' list_mapping <- get_dimension_mapping_from_df(
+#'   test_mapping,
+#'   dim_cols = c('scale', 'dimension-1', 'dimension-2')
+#' )
 #' str(list_mapping)
 #' @seealso
 #'  \code{\link[rlist]{list.parse}}, \code{\link[rlist]{list.group}}
@@ -94,10 +96,6 @@ get_all_dimensions_from_mapping_list <-
 #' data(test_mapping)
 #' list_mapping <- fill_mapping(test_mapping)
 #' print(list_mapping)
-#' @seealso
-#'  \code{\link[data.table]{transpose}}
-#'  \code{\link[tidyr]{fill}}
-#'  \code{\link[tidyselect]{everything}}
 #' @rdname fill_mapping
 #' @export
 #' @importFrom data.table transpose

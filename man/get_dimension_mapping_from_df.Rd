@@ -25,8 +25,10 @@ DETAILS
 }
 \examples{
 data(test_mapping)
-list_mapping <- get_dimension_mapping_from_df(test_mapping,
-                                              dim_cols = c('scale', 'dimension-1', 'dimension-2'))
+list_mapping <- get_dimension_mapping_from_df(
+  test_mapping,
+  dim_cols = c('scale', 'dimension-1', 'dimension-2')
+)
 str(list_mapping)
 }
 \seealso{
