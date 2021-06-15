@@ -28,3 +28,5 @@ Imports:
     tidyr,
     tidyselect,
     data.table
+URL: https://github.com/ugandasniper/wenxiangR
+BugReports: https://github.com/ugandasniper/wenxiangR/issues
