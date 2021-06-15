@@ -27,6 +27,8 @@ Imports:
     tibble,
     tidyr,
     tidyselect,
-    data.table
+    data.table,
+    stringr,
+    magrittr
 URL: https://github.com/ugandasniper/wenxiangR
 BugReports: https://github.com/ugandasniper/wenxiangR/issues

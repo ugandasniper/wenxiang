@@ -7,7 +7,6 @@
 #' @return mean, standard deviation, sample size and the rownumber of cases excluded for each dimension
 #' @details DETAILS
 #' @examples
-#'
 #' @seealso
 #'  \code{\link[tibble]{rownames}}
 #'  \code{\link[dplyr]{between}}
@@ -33,14 +32,14 @@ compute_norm <-
         get_all_dimensions_from_mapping_list(list_mapping)
       for (dim in dimensions_to_drop_outliers) {
         M <- data[[dim]] %>% mean(na.rm = TRUE)
-        SD <- data[[dim]] %>% sd(na.rm = TRUE)
+        SD <- data[[dim]] %>% stats::sd(na.rm = TRUE)
         .exclude_ids <-
           data[["rowname"]][!dplyr::between(data[[dim]], M - n_sigma * SD, M + n_sigma * SD)]
         exclude_ids[[dim]] <- unique(.exclude_ids)
       }
     }
 
-    data <- data %>% filter(!rowname %in% unlist(exclude_ids))
+    data <- data %>% dplyr::filter(!rowname %in% unlist(exclude_ids))
 
     ## compute norm
     for (dim in exclude_dimensions) {
@@ -48,12 +47,12 @@ compute_norm <-
         list(
           dimension = dim,
           M = data[[dim]] %>% mean(na.rm = TRUE),
-          SD = data[[dim]] %>% sd(na.rm = TRUE),
-          n = data %>% drop_na(!!dim) %>% pull(dim) %>% length(),
-          case_excluded = exclude_ids[[dim]] %>% str_c(collapse = ",")
+          SD = data[[dim]] %>% stats::sd(na.rm = TRUE),
+          n = data %>% tidyr::drop_na(!!dim) %>% dplyr::pull(dim) %>% length(),
+          case_excluded = exclude_ids[[dim]] %>% strinr::str_c(collapse = ",")
         )
       )
-      norm_output %<>% bind_rows(.norm_output)
+      norm_output <- norm_output %>% dplyr::bind_rows(.norm_output)
     }
 
     return(norm_output)

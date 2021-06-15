@@ -2,7 +2,7 @@
 % Please edit documentation in R/compute_norm.R
 \name{compute_norm}
 \alias{compute_norm}
-\title{Compute Norm Score for Scored Likert Scales}
+\title{Compute Norm Statistics for Scored Likert Scales}
 \usage{
 compute_norm(data, list_mapping, n_sigma = 3, exclude_ids)
 }
@@ -13,19 +13,16 @@ compute_norm(data, list_mapping, n_sigma = 3, exclude_ids)
 
 \item{n_sigma}{to exclude cases less or greater than n_sigma of distribution, Default: 3}
 
-\item{exclude_ids}{to specify the row number of cases to be excluded for norm computation, otherwise exclude according to \code{n_sigma}}
+\item{exclude_ids}{to manually specify the row number of cases to be excluded for norm computation, otherwise exclude cases by \code{n_sigma} principle.}
 }
 \value{
-mean, standard deviation, sample size and the rownumber which cases are exclued for norm computation
+mean, standard deviation, sample size and the rownumber of cases excluded for each dimension
 }
 \description{
 FUNCTION_DESCRIPTION
 }
 \details{
 DETAILS
-}
-\examples{
-
 }
 \seealso{
 \code{\link[tibble]{rownames}}
