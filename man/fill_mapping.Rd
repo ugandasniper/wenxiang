@@ -2,20 +2,20 @@
 % Please edit documentation in R/mapping.R
 \name{fill_mapping}
 \alias{fill_mapping}
-\title{FUNCTION_TITLE}
+\title{fill empty mapping dataframe}
 \usage{
 fill_mapping(df_mapping, dim_cols)
 }
 \arguments{
-\item{df_mapping}{PARAM_DESCRIPTION}
+\item{df_mapping}{a dataframe indicating the dimension structure}
 
-\item{dim_cols}{PARAM_DESCRIPTION}
+\item{dim_cols}{column names in \code{df_mapping} indicating the hierarchy of dimensions}
 }
 \value{
 OUTPUT_DESCRIPTION
 }
 \description{
-FUNCTION_DESCRIPTION
+fill empties in a mapping dataframe with the higher level dimensions
 }
 \details{
 DETAILS

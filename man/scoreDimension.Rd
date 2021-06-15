@@ -4,7 +4,7 @@
 \alias{scoreDimension}
 \title{FUNCTION_TITLE}
 \usage{
-scoreDimension(data, list_mapping, how = base::mean)
+scoreDimension(data, list_mapping, how = base::rowMeans)
 }
 \arguments{
 \item{data}{PARAM_DESCRIPTION}
@@ -31,8 +31,7 @@ df_questionnarie <- scoreItem(df_questionnarie,
                               dim_cols = dim_cols,
                               item_col = 'id')
 list_mapping <- get_dimension_mapping_from_df(df_mapping, dim_cols = dim_cols)
-df_questionnarie <- scoreDimension(df_questionnarie,
-                                   list_mapping)
+df_questionnarie <- scoreDimension(df_questionnarie, list_mapping)
 }
 \seealso{
 \code{\link[purrr]{vec_depth}}, \code{\link[purrr]{partial}}, \code{\link[purrr]{map_if}}

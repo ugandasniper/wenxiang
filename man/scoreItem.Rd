@@ -9,7 +9,10 @@ scoreItem(
   df_mapping,
   dim_cols = c("dimension-1", "dimension-2"),
   item_col = "序号",
-  how = base::mean
+  item_type_col,
+  key_answer_col,
+  NP_col,
+  how = base::rowMeans
 )
 }
 \arguments{
@@ -35,12 +38,12 @@ DETAILS
 \examples{
 data(test_data, test_mapping)
 df_questionnarie <- test_data; df_mapping <- test_mapping
-df_questionnarie <-
-scoreItem(
+df_questionnarie <- scoreItem(
   df_questionnarie,
   df_mapping,
   dim_cols = c("scale", 'dimension-1', 'dimension-2'),
-  item_col = 'id'
+  item_col = 'id',
+  NP_col = 'np'
 )
 }
 \seealso{

@@ -24,6 +24,20 @@ FUNCTION_DESCRIPTION
 \details{
 DETAILS
 }
+\examples{
+dim_cols = c("dimension-1", "dimension-2", "dimension-3")
+data <- scoreQuestionnaire(
+  data = questionnaire_mixed,
+  df_mapping = mapping_mixed,
+  dim_cols = dim_cols,
+  item_col = '序号',
+  item_type_col = '题型',
+  key_answer_col = '正确答案'
+)
+list_mapping <- get_dimension_mapping_from_df(mapping_mixed, dim_cols = dim_cols)
+norm_output <- compute_norm(data, list_mapping, n_sigma=3)
+
+}
 \seealso{
 \code{\link[tibble]{rownames}}
 \code{\link[dplyr]{between}}
