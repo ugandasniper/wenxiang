@@ -84,10 +84,10 @@ get_all_dimensions_from_mapping_list <-
 
 
 
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param df_mapping PARAM_DESCRIPTION
-#' @param dim_cols PARAM_DESCRIPTION
+#' @title fill empty mapping dataframe
+#' @description fill empties in a mapping dataframe with the higher level dimensions
+#' @param df_mapping a dataframe indicating the dimension structure
+#' @param dim_cols column names in `df_mapping` indicating the hierarchy of dimensions
 #' @return OUTPUT_DESCRIPTION
 #' @details DETAILS
 #' @examples
