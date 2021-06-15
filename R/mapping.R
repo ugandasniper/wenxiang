@@ -65,8 +65,6 @@ get_dimension_mapping_from_df <-
 get_all_dimensions_from_mapping_list <-
   function(list_mapping,
            only_subdimensions = FALSE)
-
-
     {
     output <- c()
     mapping_depth <- purrr::vec_depth(list_mapping)
